@@ -14,13 +14,18 @@ public class Turtle extends Pen {
         this.position= new Point(p);
         this.angle=angle;
     }
-    public void turnRight(){
-        angle+=angle;
+    public void turnRight(float angle){
+       this.angle+=angle;
     }
-    public void turnLeft(){
-        angle-=angle;
+    public void turnLeft(float angle){
+        this.angle-=angle;
     }
 
-
+    public void forwardTo(float distance){
+        float radians = (float) Math.toRadians(angle);
+        float x= position.getX()+(float) (distance* Math.cos(radians));
+        float y= position.getY()+(float) (distance* Math.sin(radians));
+        lineTo(new Point(x,y));
+    }
 
 }

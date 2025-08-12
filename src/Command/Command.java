@@ -1,4 +1,7 @@
 package Command;
 
-public class Command {
+public interface  Command {
+    public void execute();
+    String getName();
+
 }
