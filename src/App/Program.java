@@ -20,7 +20,7 @@ public class Program {
         Turtle bigTurtle = new Turtle(cvs, point,0 );
         commands=new Command[]{
                 new SquareCommand(bigTurtle,50),
-//                new ZigZagCommand(bigTurtle,50)
+               new ZigZagCommand(bigTurtle,50)
         };
 
         System.out.println("String driven turtle app");
@@ -32,6 +32,8 @@ public class Program {
         String command= scanner.nextLine();
         if(command.equals("F+F+F+F")){
             commands[0].execute();
+        } else if (command.equals("F-F+F-F")) {
+            commands[1].execute();
         }
 
         JFrame frame = new JFrame("Turtle");
